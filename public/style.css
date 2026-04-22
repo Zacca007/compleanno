@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+
+body {
+    background-color: #fff5f8; /* Un fondo leggermente rosa ci sta bene */
+}
+
+.container-arco {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testo-curvo {
+    font-family: 'DynaPuff', cursive;
+    font-weight: 700;
+    fill: #FF69B4; /* Rosa acceso */
+    overflow: visible;
+}
+
+/* Aggiungiamo un po' di stile "bubble" extra */
+textPath {
+    font-size: 45px;
+    letter-spacing: 2px;
+    /* Effetto contorno bianco per farlo risaltare */
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 8px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
