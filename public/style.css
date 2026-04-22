@@ -1,30 +1,327 @@
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* ─── VARIABILI ─────────────────────────────────── */
+:root {
+    --rosa:       #FF69B4;
+    --rosa-scuro: #e0488a;
+    --rosa-pale:  #fce4f0;
+    --panna:      #fff9fb;
+    --testo:      #3a1a2e;
+    --testo-light:#7a4a66;
+    --accent:     #ff9dd4;
+    --giallo:     #ffe082;
+    --viola:      #c678b8;
+}
+
+/* ─── RESET BASE ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    background-color: #fff5f8; /* Un fondo leggermente rosa ci sta bene */
+    background-color: var(--panna);
+    background-image:
+        radial-gradient(ellipse at 20% 10%, #ffd6ec 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, #f0d6f5 0%, transparent 50%);
+    color: var(--testo);
+    font-family: 'Lora', Georgia, serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ─── CORIANDOLI ─────────────────────────────────── */
+.confetti-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.confetto {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    animation: caduta linear forwards;
+    opacity: 0;
+}
+
+@keyframes caduta {
+    0%   { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ─── HEADER ─────────────────────────────────────── */
+header {
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+}
+
+.header-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.stars {
+    font-size: 1.2rem;
+    color: var(--rosa);
+    letter-spacing: 0.5rem;
+    margin-bottom: 0.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.5; }
 }
 
 .container-arco {
     width: 100%;
-    max-width: 600px;
+    max-width: 580px;
     margin: 0 auto;
 }
 
 .testo-curvo {
     font-family: 'DynaPuff', cursive;
     font-weight: 700;
-    fill: #FF69B4; /* Rosa acceso */
+    fill: var(--rosa);
     overflow: visible;
+    width: 100%;
+    height: auto;
 }
 
-/* Aggiungiamo un po' di stile "bubble" extra */
 textPath {
-    font-size: 45px;
-    letter-spacing: 2px;
-    /* Effetto contorno bianco per farlo risaltare */
+    font-size: 42px;
+    letter-spacing: 3px;
     paint-order: stroke;
     stroke: #ffffff;
-    stroke-width: 8px;
+    stroke-width: 10px;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.diciotto {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    margin: 0.5rem 0 0.8rem;
+}
+
+.num {
+    font-family: 'DynaPuff', cursive;
+    font-weight: 700;
+    font-size: clamp(5rem, 20vw, 9rem);
+    color: transparent;
+    -webkit-text-stroke: 3px var(--rosa);
+    line-height: 1;
+    animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.num:nth-child(1) { animation-delay: 0.1s; }
+.num:nth-child(2) { animation-delay: 0.25s; }
+
+@keyframes pop {
+    from { transform: scale(0.3); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.sottotitolo {
+    font-family: 'DynaPuff', cursive;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    color: var(--testo-light);
+    margin-bottom: 1rem;
+}
+
+/* ─── SEZIONE LISTA ──────────────────────────────── */
+.sezione-lista {
+    max-width: 860px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    font-family: 'DynaPuff', cursive;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    color: var(--rosa);
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+.section-sub {
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--testo-light);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    background: #fff;
+    border: 2px solid var(--rosa-pale);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    box-shadow: 0 2px 12px rgba(255, 105, 180, 0.08);
+    animation: slideUp 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+    animation-delay: var(--delay, 0s);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.18);
+    border-color: var(--rosa);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(24px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+.card-emoji {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.card-text strong {
+    font-family: 'DynaPuff', cursive;
+    font-size: 0.95rem;
+    color: var(--testo);
+}
+
+.card-text span {
+    font-size: 0.82rem;
+    color: var(--testo-light);
+    line-height: 1.4;
+}
+
+/* ─── SEZIONE LETTERA ────────────────────────────── */
+.sezione-lettera {
+    max-width: 680px;
+    margin: 3rem auto 4rem;
+    padding: 0 1rem;
+}
+
+.lettera-wrapper {
+    border: 2px dashed var(--rosa);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.lettera-toggle {
+    width: 100%;
+    background: var(--rosa-pale);
+    border: none;
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: 'DynaPuff', cursive;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    color: var(--rosa-scuro);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lettera-toggle:hover,
+.lettera-toggle:focus-visible {
+    background: #fbd0e8;
+    outline: none;
+}
+
+.toggle-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.freccia {
+    margin-left: auto;
+    font-size: 1.2rem;
+    transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.lettera-toggle[aria-expanded="true"] .freccia {
+    transform: rotate(180deg);
+}
+
+/* Accordion a tendina */
+.lettera-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lettera-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+}
+
+.lettera-inner {
+    overflow: hidden;
+    padding: 0 1.8rem;
+    transition: padding 0.45s ease;
+}
+
+.lettera-content[aria-hidden="false"] .lettera-inner {
+    padding: 1.8rem;
+}
+
+.lettera-data {
+    font-size: 0.8rem;
+    color: var(--testo-light);
+    margin-bottom: 1.2rem;
+    font-style: italic;
+}
+
+.lettera-inner p {
+    font-size: clamp(0.92rem, 2.5vw, 1.02rem);
+    line-height: 1.8;
+    color: var(--testo);
+    margin-bottom: 1.1rem;
+}
+
+.lettera-inner p:last-child { margin-bottom: 0; }
+
+.firma {
+    font-style: italic;
+    color: var(--rosa-scuro) !important;
+    font-weight: 600;
+    margin-top: 1.5rem !important;
+}
+
+/* ─── FOOTER ─────────────────────────────────────── */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-family: 'DynaPuff', cursive;
+    font-size: 0.9rem;
+    color: var(--testo-light);
+    border-top: 1px solid var(--rosa-pale);
+}
+
+/* ─── RESPONSIVE FINE TUNING ─────────────────────── */
+@media (max-width: 420px) {
+    textPath { font-size: 32px; letter-spacing: 1px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .lettera-toggle { font-size: 0.78rem; }
 }

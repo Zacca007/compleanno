@@ -1,33 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="kitty.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>18 anni 🎉</title>
 </head>
 
 <body>
+
+    <!-- Coriandoli -->
+    <div class="confetti-container" id="confetti"></div>
+
+    <!-- HEADER -->
     <header>
-        <div class="container-arco">
-            <svg viewBox="0 0 500 200" class="testo-curvo">
-                <path id="curvePath" d="M40,150 Q250,20 460,150" fill="transparent" />
-                <text>
-                    <textPath xlink:href="#curvePath" startOffset="50%" text-anchor="middle">
-                        BUON COMPLEANNO
-                    </textPath>
-                </text>
-            </svg>
+        <div class="header-inner">
+            <div class="stars">✦ ✦ ✦</div>
+            <div class="container-arco">
+                <svg viewBox="0 0 500 200" class="testo-curvo" aria-label="Buon Compleanno">
+                    <path id="curvePath" d="M40,160 Q250,10 460,160" fill="transparent" />
+                    <text>
+                        <textPath xlink:href="#curvePath" startOffset="50%" text-anchor="middle">
+                            BUON COMPLEANNO
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+            <div class="diciotto">
+                <span class="num">1</span><span class="num">8</span>
+            </div>
+            <p class="sottotitolo">finalmente maggiorenne ✨</p>
         </div>
     </header>
+
     <main>
 
-    </main>
-    <footer>
+        <!-- SEZIONE: cosa puoi fare -->
+        <section class="sezione-lista">
+            <h2 class="section-title">cosa puoi fare adesso</h2>
+            <p class="section-sub">(ufficialmente, per la legge, senza chiedere il permesso a nessuno)</p>
 
+            <div class="card-grid">
+                <div class="card" style="--delay: 0s">
+                    <div class="card-emoji">🍷</div>
+                    <div class="card-text">
+                        <strong>bere</strong>
+                        <span>vino, birra, spritz, tutto. benvenuta nell'inferno degli aperitivi.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.08s">
+                    <div class="card-emoji">🚬</div>
+                    <div class="card-text">
+                        <strong>fumare</strong>
+                        <span>puoi. ti sconsiglio, ma puoi.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.16s">
+                    <div class="card-emoji">🚗</div>
+                    <div class="card-text">
+                        <strong>patente B</strong>
+                        <span>guidare una macchina vera, non solo il motorino.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.24s">
+                    <div class="card-emoji">✈️</div>
+                    <div class="card-text">
+                        <strong>viaggiare da sola</strong>
+                        <span>nessun modulo firmato dai genitori. nessun adulto che ti accompagna.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.32s">
+                    <div class="card-emoji">🗳️</div>
+                    <div class="card-text">
+                        <strong>votare</strong>
+                        <span>camera dei deputati. adesso le tue opinioni contano sulla carta.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.4s">
+                    <div class="card-emoji">⚖️</div>
+                    <div class="card-text">
+                        <strong>andare in galera</strong>
+                        <span>per davvero, quella degli adulti. cerca di evitarlo.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.48s">
+                    <div class="card-emoji">📝</div>
+                    <div class="card-text">
+                        <strong>firmare contratti</strong>
+                        <span>affitti, banche, lavoro. responsabilità illimitate, congratulazioni.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.56s">
+                    <div class="card-emoji">🎰</div>
+                    <div class="card-text">
+                        <strong>giocare d'azzardo</strong>
+                        <span>gratta e vinci, slot, casinò. ti auguro di non farlo mai.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.64s">
+                    <div class="card-emoji">🌙</div>
+                    <div class="card-text">
+                        <strong>entrare in discoteca</strong>
+                        <span>senza il trucco per sembrare più grande. adesso sei grande.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.72s">
+                    <div class="card-emoji">🏠</div>
+                    <div class="card-text">
+                        <strong>vivere da sola</strong>
+                        <span>prendere casa, decidere tutto, dimenticare di comprare il detersivo.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.8s">
+                    <div class="card-emoji">💉</div>
+                    <div class="card-text">
+                        <strong>tatuaggi e piercing</strong>
+                        <span>senza il permesso di nessuno. pensaci bene lo stesso.</span>
+                    </div>
+                </div>
+                <div class="card" style="--delay: 0.88s">
+                    <div class="card-emoji">💌</div>
+                    <div class="card-text">
+                        <strong>fare quello che vuoi</strong>
+                        <span>con la tua vita, i tuoi soldi, il tuo tempo. davvero.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE: lettera -->
+        <section class="sezione-lettera">
+            <div class="lettera-wrapper">
+                <button class="lettera-toggle" id="toggleBtn" aria-expanded="false" aria-controls="lettera-content">
+                    <span class="toggle-icon">📮</span>
+                    clicca qui per leggere la lettera brutta e schifosa
+                    <span class="freccia" aria-hidden="true">↓</span>
+                </button>
+
+                <div class="lettera-content" id="lettera-content" aria-hidden="true">
+                    <div class="lettera-inner">
+                        <p class="lettera-data">22 aprile 2026</p>
+
+                        <p>
+                            Buon compleanno, so che è da un bel po' che aspettavi questo giorno
+                        </p>
+                        <p>
+                            Sarei un falso se dicessi che non sto approfittando degli auguri per sentirti un’ultima
+                            volta.
+                            Cambiare abitudini è sempre difficile per tutti, in particolare per me.
+                            Quindi non posso nascondere che mi manchi da morire.
+                            Non so che cosa fai, non so come stai, e non è per niente facile senza di te.
+                            Ci penso spesso, mi chiedo se io abbia sbagliato ad allontanarmi, e non so mai che cosa
+                            rispondermi, perché quando penso ai momenti in cui mi sono sentito ferito credo di aver
+                            fatto bene, ma quando penso a tutto il resto penso che forse avrei potuto sopportare ancora
+                            un po'.
+                        </p>
+                        <p>
+                            L'ho fatto perché ho sentito il rapporto rovinarsi nel tempo.
+                            Da quando ci siamo lasciati la situazione è diventata sempre più confusa.
+                            Ci ho provato tante volte a risanare il rapporto che avevamo, ma evidentemente ci siamo
+                            voluti in modi completamente diversi, e non ce l'abbiamo fatta.
+                            e io non dubito che con qualcun altro sarai perfetta come lo sei stata per me, solo mi
+                            dispiace che sia andata così.
+                        </p>
+                        <p>
+                            So che nella tua testa io rimarrò un soggetto al pari di quelli che prendi in giro con le
+                            tue amiche.
+                            E magari ti stai già sentendo con qualcun altro, forse già da un po'.
+                            Quindi non mi stupirei se tu mi dicessi che non ti passo per la testa nemmeno una volta ogni
+                            tanto.
+                            Ma voglio che tu sappia che non ti odio.
+                            Perché anche se il nostro rapporto si è rovinato, ti voglio bene come a una sorella.
+                            Siamo stati un disastro entrambi, ma mi mancherai sempre e ti vorrò sempre bene.
+                            Se ci fosse il modo per ritornare a parlarti normalmente, lo farei, ma da quello che ho
+                            capito stai meglio così.
+                        </p>
+                        <p>
+                            Tanti auguri di buon compleanno LuLù, ti voglio bene da qui fino alla luna.
+                        </p>
+                        <p class="firma">buon compleanno. sul serio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>🎂 18 anni, finalmente.</p>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
