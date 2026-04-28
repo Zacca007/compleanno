@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(publicDir, 'index.html'));
 });
 
+app.post('/letterOpened', (req, res)=>{
+    console.log("letter opened");
+});
+
 app.listen(port, () => {
     console.log(`🎂 Server compleanno in ascolto su http://localhost:${port}`);
 });

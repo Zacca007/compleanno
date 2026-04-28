@@ -7,7 +7,7 @@ function creaConfetto() {
     el.classList.add('confetto');
     el.style.left = Math.random() * 100 + 'vw';
     el.style.background = colori[Math.floor(Math.random() * colori.length)];
-    el.style.width  = (Math.random() * 8 + 5) + 'px';
+    el.style.width = (Math.random() * 8 + 5) + 'px';
     el.style.height = (Math.random() * 8 + 5) + 'px';
     el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
     const dur = Math.random() * 2.5 + 1.5;
@@ -32,4 +32,8 @@ btn.addEventListener('click', () => {
     const aperto = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!aperto));
     content.setAttribute('aria-hidden', String(aperto));
+
+    const url = '/letterOpened';
+    const data = JSON.stringify({ timestamp: Date.now() });
+    navigator.sendBeacon(url, data);
 });
