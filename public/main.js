@@ -22,7 +22,7 @@ for (let i = 0; i < 60; i++) creaConfetto();
 // Qualche coriandolo ogni tanto
 setInterval(() => {
     for (let i = 0; i < 5; i++) creaConfetto();
-}, 3000);
+}, 2500);
 
 // ─── ACCORDION LETTERA ────────────────────────────
 const btn = document.getElementById('toggleBtn');
@@ -34,6 +34,5 @@ btn.addEventListener('click', () => {
     content.setAttribute('aria-hidden', String(aperto));
 
     const url = '/letterOpened';
-    const data = JSON.stringify({ timestamp: Date.now() });
-    navigator.sendBeacon(url, data);
+    navigator.sendBeacon(url, null);
 });
