@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="kitty.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>18 anni 🎉</title>
 </head>
-
 <body>
 
     <!-- Coriandoli -->
@@ -122,7 +118,7 @@
                     <div class="card-emoji">💉</div>
                     <div class="card-text">
                         <strong>tatuaggi e piercing</strong>
-                        <span>all'ombelico spacca</span>
+                        <span>all'ombelico spacca, e puoi farti la scritta verticale sulla schiena che ti piaceva</span>
                     </div>
                 </div>
                 <div class="card" style="--delay: 0.88s">
@@ -131,6 +127,39 @@
                         <strong>fare quello che vuoi</strong>
                         <span>non che cambi molto rispetto a prima</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE: canvas -->
+        <section class="sezione-canvas">
+            <h2 class="section-title">disegna qualcosa</h2>
+            <p class="section-sub">che rappresenta come ti senti in questo giorno speciale</p>
+
+            <div class="canvas-wrapper">
+                <div class="canvas-toolbar">
+                    <div class="colori">
+                        <button class="colore-btn attivo" data-colore="#3a1a2e" style="background:#3a1a2e" aria-label="nero"></button>
+                        <button class="colore-btn" data-colore="#FF69B4" style="background:#FF69B4" aria-label="rosa"></button>
+                        <button class="colore-btn" data-colore="#c678b8" style="background:#c678b8" aria-label="viola"></button>
+                        <button class="colore-btn" data-colore="#ffe082" style="background:#ffe082" aria-label="giallo"></button>
+                        <button class="colore-btn" data-colore="#ffffff" style="background:#ffffff; border: 2px solid #fce4f0" aria-label="bianco (gomma)"></button>
+                    </div>
+                    <div class="spessori">
+                        <button class="spessore-btn attivo" data-size="3" aria-label="sottile"><span style="width:3px;height:3px"></span></button>
+                        <button class="spessore-btn" data-size="8" aria-label="medio"><span style="width:8px;height:8px"></span></button>
+                        <button class="spessore-btn" data-size="16" aria-label="spesso"><span style="width:16px;height:16px"></span></button>
+                    </div>
+                    <button class="clear-btn" id="clearCanvas">✕ cancella</button>
+                </div>
+
+                <canvas id="drawingCanvas"></canvas>
+
+                <div class="canvas-footer">
+                    <button class="invia-btn" id="inviaDisegno">
+                        <span class="invia-label">invia il disegno</span>
+                        <span class="invia-ok" hidden>✓ inviato!</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -180,13 +209,13 @@
                             senza pensare a cosa siamo o a cosa siamo stati, vorrei semplicemente che tornassimo a
                             volerci bene, e a dimostrarcelo come facevamo prima che le cose prendessero questa
                             direzione.
-                            Anche Akira ha dovuto distruggere tokyo per poterla ricostruire (l'anime a cui si è ispirato
-                            kanye per Bully, non so se hai presente, vabbè).
+                            Anche in Akira il protagonista ha dovuto distruggere tokyo per poterla ricostruire
+                            (l'anime a cui si è ispirato kanye per Bully, non so se hai presente, vabbè).
                         </p>
                         <p>
                             Tanti auguri di buon compleanno LuLù, ti voglio bene da qui fino alla luna.
                         </p>
-                        <p class="firma">~ pietro "pippi" zaccarini</p>
+                        <p class="firma">buon compleanno. sul serio.</p>
                     </div>
                 </div>
             </div>
@@ -200,5 +229,4 @@
 
     <script src="main.js"></script>
 </body>
-
 </html>
